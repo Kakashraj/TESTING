@@ -1,0 +1,25 @@
+@startuml
+
+class User {
+  +userId: int
+  +name: string
+  +login()
+  +logout()
+}
+
+class Order {
+  +orderId: int
+  +date: Date
+  +calculateTotal()
+}
+
+class Product {
+  +productId: int
+  +price: double
+  +getPrice()
+}
+
+User "1" --> "many" Order : places
+Order "1" --> "many" Product : contains
+
+@enduml
